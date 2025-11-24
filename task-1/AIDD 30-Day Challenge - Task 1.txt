@@ -1,0 +1,44 @@
+﻿AIDD 30-Day Challenge - Task 1
+ Name: Alishba Wajahat
+Date: 17 November 2025
+________________
+
+
+Question 1
+Write your reflection in your own words: What does AI-Driven Development mean to you?
+It means a lot because now I can think really big. I could handle complex projects and can scale them to bigger terms. I could build and deliver projects really fast. I can really start up my business with AI as my partner; we build and deliver. Everything seems possible now. I just need to make sure I understand the strategy and can do prompting really well, so our partnership runs in the long term xd.
+________________
+
+
+Question 2
+How do you see the future of Human–AI Collaboration in software development?
+This Human-AI collaboration would be really effective and impactful, but you can only collaborate with AI agents when your understanding is really solid. You need to know how to code and debug so you can explain what you want to build: the architecture, needs, features, strategies, and all. You can’t just sit dumb and let AI do everything; you must control every step and make AI your assistant. In this way, you'll find yourself in a win-win situation always. Without proper understanding, you couldn't survive this collaboration at any point.
+________________
+
+
+ Self-Test (MCQs)
+1. What is the main purpose of the AI-Native Era?
+ a) Replace developers
+b) Empower developers through AI tools
+ c) Eliminate coding
+d) Automate testing
+2. What defines an AI-driven developer?
+ a) Writes only syntax
+b) Creates context-aware prompts
+ c) Avoids tools
+d) Works offline
+3. What does “AIDD” stand for?
+ a) AI-Integrated Data Design
+b) AI-Driven Development
+ c) Automated IDE Deployment
+d) Adaptive Input Debugger
+4. What is the focus of Evaluation-Driven Development (EvDD)?
+ a) Manual coding
+b) Evaluating and improving AI outputs
+ c) UI design
+d) Testing only
+5. What should developers focus on in the AI era?
+ a) Syntax only
+b) Building reasoning + evaluation skills
+ c) Avoiding AI tools
+d) Manual workflows
