@@ -1,0 +1,13 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator that takes string expressions and returns numerical results",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "node tests/calculator.test.js",
+    "start": "node src/calculator.js"
+  },
+  "keywords": ["calculator", "expression", "parser"],
+  "author": "Simple Calculator",
+  "license": "MIT"
+}

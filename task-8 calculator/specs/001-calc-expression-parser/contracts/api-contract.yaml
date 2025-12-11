@@ -1,0 +1,101 @@
+# Calculator API Contract
+
+## Overview
+The calculator service provides mathematical expression evaluation capabilities. It accepts string expressions and returns numerical results or error information.
+
+## Base Path
+`/api/calculator`
+
+## Endpoints
+
+### POST /evaluate
+Evaluates a mathematical expression and returns the result.
+
+#### Request
+```json
+{
+  "expression": "string"
+}
+```
+
+**Request Parameters:**
+- `expression`: A string containing a mathematical expression to evaluate (required)
+
+#### Response
+**Success Response (200 OK):**
+```json
+{
+  "success": true,
+  "value": 14.5,
+  "originalExpression": "2.5 + 3 * 4",
+  "evaluationTimeMs": 2
+}
+```
+
+**Error Response (400 Bad Request):**
+```json
+{
+  "success": false,
+  "error": {
+    "type": "SYNTAX_ERROR",
+    "message": "Invalid character 'a' at position 4",
+    "position": 4,
+    "originalExpression": "2 + a * 3"
+  },
+  "originalExpression": "2 + a * 3"
+}
+```
+
+**Response Fields:**
+- `success`: Boolean indicating if the evaluation was successful
+- `value`: The numerical result of the evaluation (present when success is true)
+- `error`: Object containing error details (present when success is false)
+- `originalExpression`: Echo of the input expression
+- `evaluationTimeMs`: Time taken for evaluation in milliseconds
+
+### GET /health
+Health check endpoint to verify the calculator service is operational.
+
+#### Response
+**Success Response (200 OK):**
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-12-12T10:30:00Z",
+  "version": "1.0.0"
+}
+```
+
+## Supported Operations
+The calculator supports the following mathematical operations:
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Parentheses: `(` and `)` for grouping
+
+## Operator Precedence
+Operations follow standard mathematical precedence:
+1. Parentheses (highest precedence)
+2. Multiplication and Division (left-to-right)
+3. Addition and Subtraction (lowest precedence)
+
+## Examples
+**Valid Expressions:**
+- `"2 + 3"` → `5`
+- `"2 + 3 * 4"` → `14` (not 20)
+- `"(2 + 3) * 4"` → `20`
+- `"10 / 2.5"` → `4`
+- `"3.14 * 2"` → `6.28`
+
+**Invalid Expressions:**
+- `"2 + * 3"` → SYNTAX_ERROR
+- `"2 + (3 * 4"` → VALIDATION_ERROR (unbalanced parentheses)
+- `"5 / 0"` → MATHEMATICAL_ERROR (division by zero)
+- `"abc"` → LEXICAL_ERROR (invalid characters)
+
+## Error Types
+- `SYNTAX_ERROR`: Malformed expression (e.g., consecutive operators)
+- `VALIDATION_ERROR`: Structural problems (e.g., unbalanced parentheses)
+- `MATHEMATICAL_ERROR`: Mathematical impossibilities (e.g., division by zero)
+- `LEXICAL_ERROR`: Unrecognized characters in the expression
